@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加文章</title>
+</head>
+<body>
+<form action="<?php echo site_url('index/article/sendArticle')?>" method="post">
+    文章标题<input type="text" name="title" value="<?php echo set_value('title')?>"><?php echo form_error('title')?><br>
+    文章作者<input type="text" name="author" value="<?php echo set_value('author')?>"><?php echo form_error('author')?><br>
+    普通<input type="radio" value="0" name="type"<?php echo set_radio('type','0',TRUE)?>> 热门<input type="radio" value="1" name="type" <?php echo set_radio('type','1') ?>><br>
+    栏目<select name="cid">
+    <option value="0"<?php echo set_select('cid','0',TRUE)?>>情感</option><option value="1"<?php echo set_select('cid','1') ?>>家庭</option>
+        </select><br>
+    文章内容<textarea name="content" cols="60" rows="5"><?php echo set_value('content')?></textarea><?php echo form_error('content')?><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
